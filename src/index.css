@@ -2,22 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    @apply antialiased;
-  }
+@import '@fontsource/belleza/400.css';
+@import '@fontsource/cormorant-garamond/400.css';
+@import '@fontsource/cormorant-garamond/600.css';
+
+body {
+  @apply bg-beige text-dark-green;
 }
 
-/* Smooth transitions for menu items */
-a {
-  @apply transition-all duration-200;
+.matisse-shape {
+  @apply absolute pointer-events-none;
+  animation: float 20s infinite ease-in-out;
 }
 
-/* Custom animations */
-.hover\:font-normal:hover {
-  font-variation-settings: "wght" 400;
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, 20px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-10px, 30px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(-20px, 10px) rotate(3deg);
+  }
 }
